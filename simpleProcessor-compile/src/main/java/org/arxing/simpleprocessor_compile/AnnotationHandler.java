@@ -1,5 +1,7 @@
 package org.arxing.simpleprocessor_compile;
 
+import org.arxing.simpleprocessor_compile.helper.JavaFileHelper;
+
 import java.lang.annotation.Annotation;
 
 import javax.lang.model.element.TypeElement;
@@ -14,5 +16,5 @@ public abstract class AnnotationHandler<T extends Annotation> {
         this.hostKey = hostKey;
     }
 
-    public abstract void putElement(VariableElement elField, TypeElement elHost);
+    public abstract void putElement(VariableElement elField, TypeElement elHost, JavaFileHelper fileHelper);
 }

@@ -89,7 +89,7 @@ public abstract class SimpleProcessor extends AbstractProcessor {
                     AnnotationHandler handler = getHandler(annotation, host, fileHelper);
                     if (handler != null) {
                         bundles.forEach(bundle -> {
-                            handler.putElement(bundle.elField, bundle.elHost);
+                            handler.putElement(bundle.elField, bundle.elHost, fileHelper);
                         });
                     } else
                         logger.printWarning("未定義%s的handler", annotation.toString());
