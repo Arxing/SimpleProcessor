@@ -1,7 +1,7 @@
 # SimpleProcessor
 ![](https://img.shields.io/badge/language-java-orange.svg) 
 ![](https://img.shields.io/badge/license-apache%202.0-green.svg)
-![](https://img.shields.io/badge/latest-1.0.1-blue.svg)
+![](https://img.shields.io/badge/latest-1.0.2-blue.svg)
 ![](https://img.shields.io/badge/jdk-1.8-yellow.svg)
 
 A library to simplify apt procedure.
