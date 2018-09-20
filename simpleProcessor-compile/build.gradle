@@ -14,7 +14,7 @@ publish {
     repoName = 'AxLib' //遠程倉庫名稱, 默認上傳到maven
     groupId = 'org.arxing' //jcenter上的路徑
     artifactId = 'simple-processor'//項目名稱
-    publishVersion = '1.0.0'//版本
+    publishVersion = '1.0.1'//版本
     desc = ''//描述，不重要
 //    website = siteUrl//項目主頁
 }
