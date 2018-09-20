@@ -82,7 +82,7 @@ public class DemoProcessor extends SimpleProcessor {
             super(annotation, hostKey);
         }
 
-        @Override public void putElement(VariableElement elField, TypeElement elHost) {
+        @Override public void putElement(VariableElement elField, TypeElement elHost, JavaFileHelper fileHelper) {
 
         }
     }
