@@ -88,11 +88,12 @@ public class DemoProcessor extends SimpleProcessor {
     }
 }
 ```
-> Define your annotations in `1defineSupportedTypes()`.
+> Define your annotations in `defineSupportedTypes()`.
 
 > Build your AnnotationHandler<T> and return it in `getHandler()`.
 
 > `host` is a full class name means which class owned this annoation.
+
 > Example:
 > There is a class defined a annotation.
 > ```java
