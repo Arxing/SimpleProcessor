@@ -1,12 +1,15 @@
 package org.arxing.simpleprocessor_compile.helper;
 
 import com.annimon.stream.Stream;
+import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.TypeName;
 import org.arxing.simpleprocessor_compile.ProcessorUtils;
 import org.stringtemplate.v4.ST;
+
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import javax.lang.model.element.Modifier;
 
@@ -62,13 +65,38 @@ public class MethodHelper {
         return addParameter(cn, name, modifiers);
     }
 
-    public void addCode(String template, ParamBox params) {
+    public MethodHelper addCode(String template, ParamBox params) {
         ST st = new ST(template);
         Stream.of(params.map).forEach(entry -> st.add(entry.getKey(), entry.getValue()));
         String code = st.render();
         methodBuilder.addCode(code);
         methodBuilder.addCode("\n");
-        ProcessorUtils.getInstance().logger.printNote("寫入 %s", code);
+        return this;
+    }
+
+    public MethodHelper returns(TypeName type){
+        methodBuilder.returns(type);
+        return this;
+    }
+
+    public MethodHelper returns(Type type){
+        methodBuilder.returns(type);
+        return this;
+    }
+
+    public MethodHelper addAnnotation(Class<? extends Annotation> annotationType){
+        methodBuilder.addAnnotation(annotationType);
+        return this;
+    }
+
+    public MethodHelper addAnnotation(ClassName annotationType){
+        methodBuilder.addAnnotation(annotationType);
+        return this;
+    }
+
+    public MethodHelper addAnnotation(AnnotationSpec spec){
+        methodBuilder.addAnnotation(spec);
+        return this;
     }
 
     public MethodSpec create() {
