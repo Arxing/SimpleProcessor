@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/demo-annotation" />
+            <option value="$PROJECT_DIR$/demo-compile" />
             <option value="$PROJECT_DIR$/simpleProcessor-compile" />
           </set>
         </option>

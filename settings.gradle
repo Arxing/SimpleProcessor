@@ -1,1 +1,1 @@
-include ':app', ':simpleProcessor-compile'
+include ':app', ':simpleProcessor-compile', ':demo-compile', ':demo-annotation'

@@ -3,9 +3,12 @@ package org.arxing.simpleprocessor_compile.helper;
 import com.annimon.stream.Stream;
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.TypeName;
+
+import org.arxing.simpleprocessor_compile.AbstractHelper;
 import org.arxing.simpleprocessor_compile.ProcessorUtils;
 import org.stringtemplate.v4.ST;
 
@@ -23,7 +26,7 @@ import javax.lang.model.element.Modifier;
  * 6. codes
  *
  * */
-public class MethodHelper {
+public class MethodHelper extends AbstractHelper<MethodSpec, MethodSpec.Builder> {
    MethodSpec.Builder methodBuilder;
 
    Modifier[] modifiers;
@@ -66,10 +69,7 @@ public class MethodHelper {
     }
 
     public MethodHelper addCode(String template, ParamBox params) {
-        ST st = new ST(template);
-        Stream.of(params.map).forEach(entry -> st.add(entry.getKey(), entry.getValue()));
-        String code = st.render();
-        methodBuilder.addCode(code);
+        methodBuilder.addCode(Utils.renderCode(template, params));
         methodBuilder.addCode("\n");
         return this;
     }

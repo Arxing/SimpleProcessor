@@ -6,10 +6,10 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.element.VariableElement;
 
 public class ElementBundle {
-    VariableElement elField;
-    TypeElement elHost;
-    String hostKey;
-    Annotation annotation;
+    public VariableElement elField;
+    public TypeElement elHost;
+    public String hostKey;
+    public Annotation annotation;
 
     public ElementBundle(VariableElement elField, TypeElement elHost, String hostKey, Annotation annotation) {
         this.elField = elField;

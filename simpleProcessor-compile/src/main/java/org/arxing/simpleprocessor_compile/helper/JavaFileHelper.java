@@ -101,12 +101,17 @@ public class JavaFileHelper {
         methodMap.put(MethodKey.from(methodHelper), methodHelper);
     }
 
-    public MethodHelper letMethodExist(MethodHelper helper) {
+    /**
+     * 將一個函式連接至一個檔案內
+     */
+    public void linkMethod(MethodHelper helper) {
         MethodKey key = MethodKey.from(helper);
-        if (!methodMap.containsKey(key)) {
+        if (!methodMap.containsKey(key))
             methodMap.put(key, helper);
+        else{
+            MethodHelper found = methodMap.get(key);
+            helper.methodBuilder = found.methodBuilder;
         }
-        return methodMap.get(key);
     }
 
     /**

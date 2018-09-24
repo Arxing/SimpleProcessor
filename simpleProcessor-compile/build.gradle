@@ -3,10 +3,10 @@ apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.auto.service:auto-service:1.0-rc2'
     implementation 'com.annimon:stream:1.2.1'
-    implementation 'com.squareup:javapoet:1.11.1'
     implementation 'org.antlr:ST4:4.0.8'
+    api 'com.google.auto.service:auto-service:1.0-rc4'
+    api 'com.squareup:javapoet:1.11.1'
 }
 
 publish {
